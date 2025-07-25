@@ -27,7 +27,12 @@ jobs:
 
       - name: Clone and build the repo
         run: |
-          git clone $ISO_REPO
-          cd berserk-vm-xfce
-          make devbuild
-          ls -al out/
+          mkdir -p /berserk-vm-xfce/out
+          echo test > /berserk-vm/xfce/out/test
+
+      - name: Upload to Google Drive
+        uses: Wtzd8645/upload-to-google-drive-action@v2
+        with:
+          credentials: ${{ secrets.GOOGLE_DRIVE_CREDENTIALS }}
+          src_path: ${{ github.workspace }}/berserk-vm-xfce/out/
+          dest_folder: ${{ vars.GOOGLE_DRIVE_FOLDER }}
