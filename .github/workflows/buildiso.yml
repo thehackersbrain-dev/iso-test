@@ -39,7 +39,7 @@ jobs:
 
       - name: Find ISO
         id: iso
-        run: echo "file=$(ls ./out/*.iso)" >> $GITHUB_OUTPUT
+        run: echo "file=$(ls berserk-vm-xfce/out/*.iso)" >> $GITHUB_OUTPUT
 
       - name: Upload ISO to Google Drive
         run: |
