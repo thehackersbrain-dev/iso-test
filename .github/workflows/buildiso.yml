@@ -29,7 +29,9 @@ jobs:
         run: |
           mkdir -p /berserk-vm-xfce/out
           echo test > /berserk-vm-xfce/out/test
-          ls -al
+          ls -al berserk-vm-xfce/out
+          pwd
+          ls -R
 
       - name: Upload a file to Google Drive
         uses: adityak74/google-drive-upload-git-action@main
