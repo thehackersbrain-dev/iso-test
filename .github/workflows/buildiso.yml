@@ -28,7 +28,7 @@ jobs:
       - name: Clone and build the repo
         run: |
           mkdir -p /berserk-vm-xfce/out
-          echo test > /berserk-vm/xfce/out/test
+          echo test > /berserk-vm-xfce/out/test
           ls -al
 
       - name: Upload a file to Google Drive
