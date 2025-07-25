@@ -36,7 +36,6 @@ jobs:
           mkdir -p berserk-vm-xfce/out
           echo test > berserk-vm-xfce/out/test.iso
           cd berserk-vm-xfce/
-          updrive -f out/*.iso
 
       - name: Find ISO
         id: iso
