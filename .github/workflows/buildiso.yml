@@ -38,6 +38,10 @@ jobs:
           cd berserk-vm-xfce/
           updrive -f out/*.iso
 
+      - name: Find ISO
+        id: iso
+        run: echo "file=$(ls ./out/*.iso)" >> $GITHUB_OUTPUT
+
       - name: Upload ISO to Google Drive
         run: |
-          updrive -f ${{ github.workspace }}/berserk-vm-xfce/out/*.iso
+          updrive -f ${{ steps.iso.output.file }}
