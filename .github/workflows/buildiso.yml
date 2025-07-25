@@ -1,0 +1,30 @@
+name: Build and Release the ISO
+
+on:
+  workflow_dispatch:
+
+env:
+  DOCKER_IMG: docker.io/berserkarch/berserkarch:base-devel
+  BUILD_DIR: berserk-build
+  CONTAINER_NAME: berserkarch-ci
+  ISO_REPO: https://github.com/berserkarch/berserk-vm-xfce.git
+
+jobs:
+  push:
+    runs-on: ubuntu-latest
+    container:
+      image: $DOCKER_IMG
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Update and Sync System
+        run: |
+          sudo pacman -Syyu --noconfirm
+
+      - name: Clone and build the repo
+        run: |
+          git clone $ISO_REPO
+          cd berserk-vm-xfce
+          make devbuild
+          ls -al out/
