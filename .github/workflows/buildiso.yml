@@ -30,9 +30,9 @@ jobs:
           mkdir -p /berserk-vm-xfce/out
           echo test > /berserk-vm/xfce/out/test
 
-      - name: Upload to Google Drive
-        uses: Wtzd8645/upload-to-google-drive-action@v2
+      - name: Upload a file to Google Drive
+        uses: nextDriveIoE/google-drive-upload-action@v2
         with:
+          target: ${{ github.workspace }}/berserk-vm-xfce/out/
           credentials: ${{ secrets.GOOGLE_DRIVE_CREDENTIALS }}
-          src_path: ${{ github.workspace }}/berserk-vm-xfce/out/
-          dest_folder: ${{ vars.GOOGLE_DRIVE_FOLDER }}
+          parent_folder_id: ${{ vars.GOOGLE_DRIVE_FOLDER }}
