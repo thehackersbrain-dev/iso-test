@@ -29,7 +29,7 @@ jobs:
         run: |
           mkdir -p /berserk-vm-xfce/out
           echo test > /berserk-vm-xfce/out/test
-          ls -al berserk-vm-xfce/out
+          ls -al /berserk-vm-xfce/out
           pwd
           ls -R
 
