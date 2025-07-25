@@ -12,6 +12,11 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: docker.io/berserkarch/berserkarch:base-devel
+      options: >-
+        --security-opt seccomp=unconfined
+        --privileged
+        --name berserkarch
+        --hostname berserk
 
     steps:
       - uses: actions/checkout@v4
