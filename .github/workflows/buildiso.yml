@@ -31,11 +31,11 @@ jobs:
           echo test > /berserk-vm-xfce/out/test
           ls -al /berserk-vm-xfce/out
           pwd
-          ls -R
+          ls -R /
 
       - name: Upload a file to Google Drive
         uses: adityak74/google-drive-upload-git-action@main
         with:
-          filename: /berserk-vm-xfce/out/
+          filename: /berserk-vm-xfce/out/test
           credentials: ${{ secrets.GOOGLE_DRIVE_CREDENTIALS }}
           parent_folder_id: ${{ vars.GOOGLE_DRIVE_FOLDER }}
