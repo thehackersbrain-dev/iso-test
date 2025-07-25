@@ -30,10 +30,12 @@ jobs:
 
       - name: Clone and build the repo
         run: |
-          git clone $ISO_REPO
-          cd berserk-vm-xfce
-          make devbuild
+          #git clone $ISO_REPO
+          #cd berserk-vm-xfce
+          #make devbuild
+          mkdir -p berserk-vm-xfce/out
+          echo test > berserk-vm-xfce/out/test.iso
 
       - name: Upload ISO to Google Drive
         run: |
-          updrive -f /berserk-vm-xfce/out/*.iso
+          updrive -f ${{ github.workspace }}/berserk-vm-xfce/out/*.iso
