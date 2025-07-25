@@ -43,4 +43,4 @@ jobs:
 
       - name: Upload ISO to Google Drive
         run: |
-          updrive -f ${{ steps.iso.output.file }}
+          updrive -f ${{ steps.iso.outputs.file }}
