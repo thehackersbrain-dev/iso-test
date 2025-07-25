@@ -32,9 +32,7 @@ jobs:
         run: |
           git clone $ISO_REPO
           cd berserk-vm-xfce
-          #make devbuild
-          mkdir -p out
-          echo test > out/test2.iso
+          make devbuild
 
       - name: Find ISO
         id: iso
