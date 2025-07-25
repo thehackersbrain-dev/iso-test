@@ -4,16 +4,14 @@ on:
   workflow_dispatch:
 
 env:
-  DOCKER_IMG: docker.io/berserkarch/berserkarch:base-devel
   BUILD_DIR: berserk-build
-  CONTAINER_NAME: berserkarch-ci
   ISO_REPO: https://github.com/berserkarch/berserk-vm-xfce.git
 
 jobs:
   push:
     runs-on: ubuntu-latest
     container:
-      image: $DOCKER_IMG
+      image: docker.io/berserkarch/berserkarch:base-devel
 
     steps:
       - uses: actions/checkout@v4
