@@ -6,6 +6,9 @@ on:
 env:
   BUILD_DIR: berserk-build
   ISO_REPO: https://github.com/berserkarch/berserk-vm-xfce.git
+  CLIENT_SECRET: ${{ secrets.CLIENT_SECRET }}
+  REFRESH_TOKEN: ${{ secrets.REFRESH_TOKEN }}
+  DIRECTORY_ID: ${{ vars.DIRECTORY_ID }}
 
 jobs:
   push:
@@ -33,9 +36,6 @@ jobs:
           ls -al
           pwd
 
-      - name: Upload a file to Google Drive
-        uses: adityak74/google-drive-upload-git-action@main
-        with:
-          filename: test
-          credentials: ${{ secrets.GOOGLE_DRIVE_CREDENTIALS }}
-          parent_folder_id: ${{ vars.GOOGLE_DRIVE_FOLDER }}
+      - name: Upload ISO to Google Drive
+        run: |
+          updrive -f /berserk-vm-xfce/out/test
