@@ -35,8 +35,8 @@ jobs:
           #make devbuild
           mkdir -p berserk-vm-xfce/out
           echo test > berserk-vm-xfce/out/test.iso
-          pwd
-          ls -R .
+          cd berserk-vm-xfce/
+          updrive -f out/*.iso
 
       - name: Upload ISO to Google Drive
         run: |
