@@ -30,12 +30,11 @@ jobs:
 
       - name: Clone and build the repo
         run: |
-          #git clone $ISO_REPO
-          #cd berserk-vm-xfce
+          git clone $ISO_REPO
+          cd berserk-vm-xfce
           #make devbuild
-          mkdir -p berserk-vm-xfce/out
-          echo test > berserk-vm-xfce/out/test.iso
-          cd berserk-vm-xfce/
+          mkdir -p out
+          echo test > out/test2.iso
 
       - name: Find ISO
         id: iso
