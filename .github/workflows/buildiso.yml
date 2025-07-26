@@ -2,7 +2,7 @@ name: Build and Release the ISO
 
 on:
   schedule:
-    - cron: "30 22 * * */7"
+    - cron: "30 22 * * 0"
   workflow_dispatch:
 
 env:
